@@ -1,0 +1,41 @@
+# AsanaApiClient.Model.CustomFieldResponse
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**Gid** | **string** | Globally unique identifier of the resource, as a string. | [optional] [readonly] 
+**ResourceType** | **string** | The base type of this resource. | [optional] [readonly] 
+**Name** | **string** | The name of the custom field. | [optional] 
+**Type** | **string** | *Deprecated: new integrations should prefer the resource_subtype field.* The type of the custom field. Must be one of the given values.  | [optional] [readonly] 
+**EnumOptions** | [**List&lt;EnumOption&gt;**](EnumOption.md) | *Conditional*. Only relevant for custom fields of type &#x60;enum&#x60; or &#x60;multi_enum&#x60;. This array specifies the possible values which an &#x60;enum&#x60; custom field can adopt. To modify the enum options, refer to [working with enum options](/reference/createenumoptionforcustomfield). | [optional] 
+**Enabled** | **bool** | *Conditional*. This field applies only to [custom field values](/docs/custom-fields-guide#/accessing-custom-field-values-on-tasks-or-projects) and is not available for [custom field definitions](/docs/custom-fields-guide#/accessing-custom-field-definitions). Determines if the custom field is enabled or not. For more details, see the [Custom Fields documentation](/docs/custom-fields-guide#/enabled-and-disabled-values). | [optional] [readonly] 
+**RepresentationType** | **string** | This field tells the type of the custom field. | [optional] [readonly] 
+**IdPrefix** | **string** | This field is the unique custom ID string for the custom field. | [optional] 
+**InputRestrictions** | **List&lt;string&gt;** | *Conditional*. Only relevant for custom fields of type &#x60;reference&#x60;. This array of strings reflects the allowed types of objects that can be written to a &#x60;reference&#x60; custom field value. | [optional] 
+**IsFormulaField** | **bool** | *Conditional*. This flag describes whether a custom field is a formula custom field. | [optional] 
+**DateValue** | [**CustomFieldCompactDateValue**](CustomFieldCompactDateValue.md) |  | [optional] 
+**EnumValue** | [**CustomFieldCompactEnumValue**](CustomFieldCompactEnumValue.md) |  | [optional] 
+**MultiEnumValues** | [**List&lt;EnumOption&gt;**](EnumOption.md) | *Conditional*. Only relevant for custom fields of type &#x60;multi_enum&#x60;. This object is the chosen values of a &#x60;multi_enum&#x60; custom field. | [optional] 
+**NumberValue** | **decimal** | *Conditional*. This number is the value of a &#x60;number&#x60; custom field. | [optional] 
+**TextValue** | **string** | *Conditional*. This string is the value of a &#x60;text&#x60; custom field. | [optional] 
+**DisplayValue** | **string** | A string representation for the value of the custom field. Integrations that don&#39;t require the underlying type should use this field to read values. Using this field will future-proof an app against new custom field types. | [optional] [readonly] 
+**Description** | **string** | [Opt In](/docs/inputoutput-options). The description of the custom field. | [optional] 
+**Precision** | **int** | Only relevant for custom fields of type &#x60;Number&#x60;. This field dictates the number of places after the decimal to round to, i.e. 0 is integer values, 1 rounds to the nearest tenth, and so on. Must be between 0 and 6, inclusive. For percentage format, this may be unintuitive, as a value of 0.25 has a precision of 0, while a value of 0.251 has a precision of 1. This is due to 0.25 being displayed as 25%. The identifier format will always have a precision of 0. | [optional] 
+**Format** | **string** | The format of this custom field. | [optional] 
+**CurrencyCode** | **string** | ISO 4217 currency code to format this custom field. This will be null if the &#x60;format&#x60; is not &#x60;currency&#x60;. | [optional] 
+**CustomLabel** | **string** | This is the string that appears next to the custom field value. This will be null if the &#x60;format&#x60; is not &#x60;custom&#x60;. | [optional] 
+**CustomLabelPosition** | **string** | Only relevant for custom fields with &#x60;custom&#x60; format. This depicts where to place the custom label. This will be null if the &#x60;format&#x60; is not &#x60;custom&#x60;. | [optional] 
+**IsGlobalToWorkspace** | **bool** | This flag describes whether this custom field is available to every container in the workspace. Before project-specific custom fields, this field was always true. | [optional] [readonly] 
+**HasNotificationsEnabled** | **bool** | *Conditional*. This flag describes whether a follower of a task with this field should receive inbox notifications from changes to this field. | [optional] 
+**AsanaCreatedField** | **string** | *Conditional*. A unique identifier to associate this field with the template source of truth. | [optional] [readonly] 
+**IsValueReadOnly** | **bool** | *Conditional*. This flag describes whether a custom field is read only. | [optional] 
+**CreatedBy** | [**UserCompact**](UserCompact.md) |  | [optional] 
+**PeopleValue** | [**List&lt;UserCompact&gt;**](UserCompact.md) | *Conditional*. Only relevant for custom fields of type &#x60;people&#x60;. This array of [compact user](/reference/users) objects reflects the values of a &#x60;people&#x60; custom field. | [optional] 
+**ReferenceValue** | [**List&lt;AsanaNamedResource&gt;**](AsanaNamedResource.md) | *Conditional*. Only relevant for custom fields of type &#x60;reference&#x60;. This array of objects reflects the values of a &#x60;reference&#x60; custom field. | [optional] 
+**PrivacySetting** | **string** | The privacy setting of the custom field. *Note: Administrators in your organization may restrict the values of &#x60;privacy_setting&#x60;.* | [optional] 
+**DefaultAccessLevel** | **string** | The default access level when inviting new members to the custom field. This isn&#39;t applied when the &#x60;privacy_setting&#x60; is &#x60;private&#x60;, or the user is a guest. For local fields in a project or portfolio, the user must additionally have permission to modify the container itself. | [optional] 
+**ResourceSubtype** | **string** | The type of the custom field. Must be one of the given values.  | [optional] [readonly] 
+
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
+

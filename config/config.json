@@ -1,0 +1,8 @@
+{
+  "packageName": "AsanaApiClient",
+  "targetFramework": "net10.0",
+  "packageVersion": "1.0.0",
+  "packageTitle": "Tiralineas Asana Client",
+  "packageDescription": "Cliente C# de Asana",
+  "packageCompany": "Tiralineas"
+}
